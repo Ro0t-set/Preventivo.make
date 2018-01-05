@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="col-12">
+  <h4>STUDIO DENTISTICO ASSOCIATO DONATI SARTI MANCINI</h4>
+  <br>
+  <i>VIA R.TORELLI, 93 06134 PERUGIA <br>TEL 07541017</i>
+
+<br>
+<br>
+<br>
+  <h4><b><i>Preventivo</i></b></h4>
+  <br>
+  <p><b>Data Preventivo:</b>    {{preventivo.created_date}}</p>
+  <br>
+
+  <hr align=”left” size=”1″ width=”300″ color=”black” noshade>
+<h5><b>Info cliente</b></h5>
+
+<p><b>Paziente:</b> {{preventivo.cliente.nome}} {{preventivo.cliente.cognome}}<br>
+<b>Tel:</b> {{preventivo.cliente.telefono}}<br>
+<b>mail:</b> {{preventivo.cliente.mail}}<br>
+<b>Indirizzo:</b> {{preventivo.cliente.indirizzo}}<br>
+<b>Codice Fiscale:</b> {{preventivo.cliente.codice_fiscale}}</p>
+<div>
+  {{preventivo.cliente.note}}
+<br>
+<hr align=”left” size=”1″ width=”300″ color=”black” noshade>
+<br>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Dettaglio</th>
+      <th scope="col">Prezzo</th>
+      <th scope="col">Quantità</th>
+      <th scope="col">Totale</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{preventivo.prestazione1}}</td>
+      <td>{{preventivo.prestazione1.prezzo}}€</td>
+      <td>{{preventivo.ripetizione1}}</td>
+            <td>{{tot.0}}</td>
+    </tr>
+    {%if preventivo.prestazione2 == "None"%}
+    {{elif}}
+    <tr>
+      <th scope="row">2</th>
+      <td>{{preventivo.prestazione2}}</td>
+      <td>{{preventivo.prestazione2.prezzo}}€</td>
+      <td>{{preventivo.ripetizione2}}</td>
+            <td>{{tot.1}}</td>
+    </tr>
+    {%endif%}
+    {%if preventivo.prestazione3 == "None"%}
+    {{elif}}
+    <tr>
+      <th scope="row">3</th>
+      <td>{{preventivo.prestazione3}}</td>
+      <td>{{preventivo.prestazione3.prezzo}}€</td>
+      <td>{{preventivo.ripetizione3}}</td>
+            <td>{{tot.2}}</td>
+    </tr>
+    {%endif%}
+      {%if preventivo.prestazione4 == "None"%}
+      {{elif}}
+    <tr>
+      <th scope="row">4</th>
+      <td>{{preventivo.prestazione4}}</td>
+      <td>{{preventivo.prestazione4.prezzo}}€</td>
+      <td>{{preventivo.ripetizione4}}</td>
+            <td>{{tot.3}}</td>
+    </tr>
+      {%endif%}
+    {%if preventivo.prestazione5 == "None"%}
+    {{elif}}
+    <tr>
+      <th scope="row">5</th>
+      <td>{{preventivo.prestazione5}}</td>
+      <td>{{preventivo.prestazione5.prezzo}}€</td>
+      <td>{{preventivo.ripetizione5}}</td>
+            <td>{{tot.4}}</td>
+    </tr>
+      {%endif%}
+  </tbody>
+</table>
+<br>
+<br>
+<hr align=”left” size=”1″ width=”300″ color=”black” noshade>
+<p>Tot: {{preventivo.prezzo}}€</p>
+
+{% endblock content %}

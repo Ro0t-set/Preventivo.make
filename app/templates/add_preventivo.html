@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<script>
+function showHTML () {
+   // get the value from textarea $('#txt1').val()
+   // and then assign that to #div1 as html using jQuery selector '#div1'.
+    $('#prevista-cliente').html($('#id_form-0-ripetizione1').val());
+}
+</script>
+
+<div class=" row">
+
+<div class="col">
+<form method="POST" class="post-form"  method="post">
+  {% csrf_token %}
+{{ form }}
+    <input type="submit" id="salva" class="btn btn-primary" />
+</form>
+</div>
+
+<div class="col">
+
+</div>
+</div>
+</div>
+
+
+{% endblock content %}
