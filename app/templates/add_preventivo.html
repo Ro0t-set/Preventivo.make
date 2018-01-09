@@ -2,29 +2,87 @@
 
 {% block content %}
 
-<script>
-function showHTML () {
-   // get the value from textarea $('#txt1').val()
-   // and then assign that to #div1 as html using jQuery selector '#div1'.
-    $('#prevista-cliente').html($('#id_form-0-ripetizione1').val());
-}
-</script>
 
-<div class=" row">
+<!-- <input class="btn btn-success" id="toggleButton" type="button" value="Aggingi Prestazione" onclick="counter++; aggiungi('box');">
+<input class="btn btn-errore" id="toggleButton" type="button" value="Elimina" onclick="counter--; aggiungi('box');">
+-->
 
-<div class="col">
-<form method="POST" class="post-form"  method="post">
-  {% csrf_token %}
-{{ form }}
+
+
+<form method="POST" class="post-form">{% csrf_token %}
+  <div class="row">
+  Cliente:{{ form.cliente }}
+  </div>
+
+
+<br>
+
+  <div class="row">
+  Prestazioe:{{ form.prestazione1 }}
+  N°:{{ form.ripetizione1 }}
+  </div>
+
+<br>
+
+<div class="row">
+Prestazioe:{{ form.prestazione2 }}
+N°:{{ form.ripetizione2 }}
+</div>
+
+
+<br>
+
+
+<div class="row">
+Prestazioe:{{ form.prestazione3 }}
+N°:{{ form.ripetizione3 }}
+</div>
+
+
+
+
+<br>
+
+<div class="row">
+Prestazioe:{{ form.prestazione4 }}
+N°:{{ form.ripetizione4 }}
+</div>
+
+
+<br>
+
+<div class="row">
+Prestazioe:{{ form.prestazione5 }}
+N°:{{ form.ripetizione5 }}
+</div>
+
+
+
+
+<br>
     <input type="submit" id="salva" class="btn btn-primary" />
 </form>
-</div>
-
-<div class="col">
-
-</div>
-</div>
-</div>
 
 
+
+
+
+
+<!--
+<script>
+var counter = 0;
+var numBoxes = 4;
+function aggiungi(showHideDiv) {
+       var ele = document.getElementById(showHideDiv + counter);
+       if(ele.style.display == "block") {
+              ele.style.display = "none";
+       }
+       else {
+              ele.style.display = "block";
+       }
+
+}
+
+</script>
+-->
 {% endblock content %}

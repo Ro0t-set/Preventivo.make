@@ -23,7 +23,7 @@ class PreventivoForm(forms.ModelForm):
         model = Preventivo
         fields = ['cliente','prestazione1', 'ripetizione1', 'prestazione2', 'ripetizione2', 'prestazione3', 'ripetizione3', 'prestazione4', 'ripetizione4', 'prestazione5', 'ripetizione5']
         widgets = {
-            'cliente': forms.Select(attrs={'class': 'custom-select col-4', 'data-live-search': 'true'}),
+            'cliente': forms.Select(attrs={'class': 'custom-select col-4'}),
             'prestazione1': forms.Select(attrs={'class': 'form-control col-4'}),
             'prestazione2': forms.Select(attrs={'class': 'form-control col-4'}),
             'prestazione3': forms.Select(attrs={'class': 'form-control col-4'}),

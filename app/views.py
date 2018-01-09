@@ -28,14 +28,14 @@ from django.views.generic.edit import CreateView
 
 
 # Create your views here.
-@login_required(login_url='/login/')
+
 def home(request):
 
 
     return render(request, 'home.html', {})
 
 def utente(request):
-    utenti= Cliente.objects.all()
+    utenti= Cliente.objects.order_by('cognome')
 
     return render(request, 'utente.html', {'utenti':utenti})
 
@@ -72,7 +72,7 @@ def edit_utente(request, pk):
 
 
 def preventivo(request):
-    preventivo= Preventivo.objects.all()
+    preventivo= Preventivo.objects.order_by('-published_date')
 
     return render(request, 'preventivo.html', {'preventivo':preventivo})
 
