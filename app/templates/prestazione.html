@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<br>
+
+<a href="/add_prestazione" class="btn btn-success">Crea Prestazione</a>
+
+<br>
+<br>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Cognome</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+          {%for prestazione in prestazioni%}
+      <th scope="row">{{prestazione.id}}</th>
+
+        <td>{{prestazione }}</td>
+
+        <td><a href="/prestazione/{{prestazione.id}}/edit">Modifica</a></td>
+
+
+
+    </tr>
+    {%endfor%}
+
+  </tbody>
+</table>
+
+{%for prevenitvo in preventivo%}
+{{prevenitvo.ripetizione}}
+    {%endfor%}
+{% endblock content %}

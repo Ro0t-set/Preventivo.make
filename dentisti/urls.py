@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path
 from app.models import Cliente
-from app.views import home, utente, add_utente, edit_utente, preventivo, add_preventivo, edit_preventivo,stampa_preventivo
+from app.views import home, utente, add_utente, edit_utente, preventivo, add_preventivo, edit_preventivo,stampa_preventivo, prestazione, add_prestazione, edit_prestazione
 from django.views.generic import ListView, DetailView
 from django.contrib.auth.views import login, logout
 
@@ -25,11 +25,14 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
     path('utente/', utente),
+    path('prestazione/', prestazione),
+    path('add_prestazione/', add_prestazione),
     path('add_utente/', add_utente),
     path('utente/<int:pk>/edit/', edit_utente),
     path('preventivo/', preventivo),
     path('add_preventivo/', add_preventivo),
     path('prevetnivo/<int:pk>/edit/', edit_preventivo),
+    path('prestazione/<int:pk>/edit/', edit_prestazione),
     path('prevetnivo/<int:pk>/stampa/', stampa_preventivo),
 
 

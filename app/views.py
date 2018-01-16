@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.utils import timezone
 from .models import Prestazione, Preventivo, Cliente
 from django.shortcuts import render, get_object_or_404
-from .forms import ClienteForm, PreventivoForm
+from .forms import ClienteForm, PreventivoForm, PrestazioneForm
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
@@ -53,7 +53,10 @@ def add_utente(request):
 
     return render(request, 'add_utente.html', {'form':form})
 
+def prestazione(request):
+    prestazioni= Prestazione.objects.order_by('-prestazioni')
 
+    return render(request, 'prestazione.html', {'prestazioni':prestazioni})
 
 def edit_utente(request, pk):
     cliente = get_object_or_404(Cliente, pk=pk)
@@ -69,7 +72,34 @@ def edit_utente(request, pk):
     return render(request, 'utente_edit.html', {'form': form, 'cliente':cliente})
 
 
+def add_prestazione(request):
+    if request.method == "POST":
+            form = PrestazioneForm(request.POST)
+            if form.is_valid():
+                prestazione = form.save(commit=False)
+                prestazione.published_date = timezone.now()
+                prestazione.save()
+                return HttpResponseRedirect('/utente')
 
+    else:
+        form = PrestazioneForm()
+
+    return render(request, 'add_prestazione.html', {'form':form})
+
+
+
+def edit_prestazione(request, pk):
+    cliente = get_object_or_404(Cliente, pk=pk)
+    if request.method == "POST":
+        form = ClienteForm(request.POST, instance=cliente)
+        if form.is_valid():
+                cliente = form.save(commit=False)
+                cliente.published_date = timezone.now()
+                cliente.save()
+                return HttpResponseRedirect('/utente')
+    else:
+        form = ClienteForm(instance=cliente)
+    return render(request, 'utente_edit.html', {'form': form, 'cliente':cliente})
 
 def preventivo(request):
     preventivo= Preventivo.objects.order_by('-published_date')

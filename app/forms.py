@@ -1,6 +1,11 @@
 from django import forms
 from django.db import models
-from .models import Cliente, Preventivo
+from .models import Cliente, Preventivo, Prestazione
+
+class PrestazioneForm(forms.ModelForm):
+        class Meta:
+            model = Prestazione
+            fields = ('prestazioni', 'prezzo')
 
 class ClienteForm(forms.ModelForm):
     class Meta:
