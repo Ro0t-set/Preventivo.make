@@ -6,16 +6,21 @@ class PrestazioneForm(forms.ModelForm):
         class Meta:
             model = Prestazione
             fields = ('prestazioni', 'prezzo')
+        widgets = {
+            'prestazione': forms.TextInput(attrs={'class': 'form-control'}),
+            'prezzo': forms.TextInput(attrs={'class': 'form-control'}),
+        }
 
 class ClienteForm(forms.ModelForm):
     class Meta:
         model = Cliente
-        fields = ('nome', 'cognome', 'telefono', 'codice_fiscale', 'mail', 'note')
+        fields = ('nome', 'cognome', 'telefono','indirizzo', 'codice_fiscale', 'mail', 'note')
         widgets = {
             'nome': forms.TextInput(attrs={'class': 'form-control'}),
             'mail': forms.TextInput(attrs={'class': 'form-control'}),
             'cognome': forms.TextInput(attrs={'class': 'form-control'}),
             'telefono': forms.TextInput(attrs={'class': 'form-control'}),
+            'indirizzo': forms.TextInput(attrs={'class': 'form-control'}),
             'codice_fiscale': forms.TextInput(attrs={'class': 'form-control'}),
             'note': forms.Textarea(attrs={'class': 'form-control', 'rows':'3'}),
             'codice_fiscale': forms.TextInput(attrs={'class': 'form-control'}),

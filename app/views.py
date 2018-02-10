@@ -79,7 +79,7 @@ def add_prestazione(request):
                 prestazione = form.save(commit=False)
                 prestazione.published_date = timezone.now()
                 prestazione.save()
-                return HttpResponseRedirect('/utente')
+                return HttpResponseRedirect('/prestazione')
 
     else:
         form = PrestazioneForm()
@@ -89,17 +89,18 @@ def add_prestazione(request):
 
 
 def edit_prestazione(request, pk):
-    cliente = get_object_or_404(Cliente, pk=pk)
+    prestazione = get_object_or_404(Prestazione, pk=pk)
     if request.method == "POST":
-        form = ClienteForm(request.POST, instance=cliente)
+        form = PrestazioneForm(request.POST, instance=prestazione)
         if form.is_valid():
-                cliente = form.save(commit=False)
-                cliente.published_date = timezone.now()
-                cliente.save()
-                return HttpResponseRedirect('/utente')
+                prestazione = form.save(commit=False)
+                prestazione.published_date = timezone.now()
+                prestazione.save()
+                return HttpResponseRedirect('/prestazione')
     else:
-        form = ClienteForm(instance=cliente)
-    return render(request, 'utente_edit.html', {'form': form, 'cliente':cliente})
+        form = PrestazioneForm(instance=prestazione)
+    return render(request, 'prestazione_edit.html', {'form': form, 'prestazione':prestazione})
+
 
 def preventivo(request):
     preventivo= Preventivo.objects.order_by('-published_date')
@@ -141,6 +142,7 @@ def stampa_preventivo(request, pk):
     tot5= int(preventivo.ripetizione5  * preventivo.prestazione5.prezzo)
 
     tot=[tot1,tot2,tot3,tot4,tot5]
+
 
     return render(request, 'stampa_preventivo.html', { 'preventivo':preventivo, 'tot':tot})
 

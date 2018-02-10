@@ -14,6 +14,7 @@ class Cliente(models.Model):
     nome= models.CharField(max_length=100, default="",blank=True, null=True)
     cognome= models.CharField(max_length=100, default="",blank=True, null=True)
     telefono= models.CharField(max_length=100, default="",blank=True, null=True)
+    indirizzo= models.CharField(max_length=100, default="",blank=True, null=True)
     note= models.TextField(max_length=1000, default="",blank=True, null=True)
     codice_fiscale= models.CharField(max_length=100, default="",blank=True, null=True)
     mail= models.EmailField(max_length=100, default="",blank=True, null=True)
