@@ -2,10 +2,87 @@
 
 {% block content %}
 
-<div class="col-8">
+
+<!-- <input class="btn btn-success" id="toggleButton" type="button" value="Aggingi Prestazione" onclick="counter++; aggiungi('box');">
+<input class="btn btn-errore" id="toggleButton" type="button" value="Elimina" onclick="counter--; aggiungi('box');">
+-->
+
+
+
 <form method="POST" class="post-form">{% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Salva</button>
+  <div class="row">
+  Cliente:{{ form.cliente }}
+  </div>
+
+
+<br>
+
+  <div class="row">
+  Prestazioe1:{{ form.prestazione1 }}
+  N°:{{ form.ripetizione1 }}
+  </div>
+
+<br>
+
+<div class="row">
+Prestazioe2:{{ form.prestazione2 }}
+N°:{{ form.ripetizione2 }}
+</div>
+
+
+<br>
+
+
+<div class="row">
+Prestazioe3:{{ form.prestazione3 }}
+N°:{{ form.ripetizione3 }}
+</div>
+
+
+
+
+<br>
+
+<div class="row">
+Prestazioe4:{{ form.prestazione4 }}
+N°:{{ form.ripetizione4 }}
+</div>
+
+
+<br>
+
+<div class="row">
+Prestazioe5:{{ form.prestazione5 }}
+N°:{{ form.ripetizione5 }}
+</div>
+
+
+
+
+<br>
+    <input type="submit" id="salva" class="btn btn-primary" />
 </form>
-<div>
+
+
+
+
+
+
+<!--
+<script>
+var counter = 0;
+var numBoxes = 4;
+function aggiungi(showHideDiv) {
+       var ele = document.getElementById(showHideDiv + counter);
+       if(ele.style.display == "block") {
+              ele.style.display = "none";
+       }
+       else {
+              ele.style.display = "block";
+       }
+
+}
+
+</script>
+-->
 {% endblock content %}

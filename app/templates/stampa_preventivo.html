@@ -25,7 +25,7 @@
 <b>Indirizzo:</b> {{preventivo.cliente.indirizzo}}<br>
 <b>Codice Fiscale:</b> {{preventivo.cliente.codice_fiscale}}</p>
 <div>
-  {{preventivo.cliente.note}}
+  note:{{preventivo.cliente.note}}
 <br>
 <hr align=”left” size=”1″ width=”300″ color=”black” noshade>
 <br>
@@ -45,46 +45,48 @@
       <td>{{preventivo.prestazione1}}</td>
       <td>{{preventivo.prestazione1.prezzo}}€</td>
       <td>{{preventivo.ripetizione1}}</td>
-            <td>{{tot.0}}</td>
+            <td>{{tot.0}}€</td>
     </tr>
-    {%if preventivo.prestazione2 == "None"%}
-    {{elif}}
+
+    {%if tot.1 != 0%}
     <tr>
       <th scope="row">2</th>
       <td>{{preventivo.prestazione2}}</td>
       <td>{{preventivo.prestazione2.prezzo}}€</td>
       <td>{{preventivo.ripetizione2}}</td>
-            <td>{{tot.1}}</td>
+            <td>{{tot.1}}€</td>
     </tr>
     {%endif%}
-    {%if preventivo.prestazione3 == "None"%}
-    {{elif}}
+
+    {%if tot.2 != 0%}
+
     <tr>
       <th scope="row">3</th>
       <td>{{preventivo.prestazione3}}</td>
       <td>{{preventivo.prestazione3.prezzo}}€</td>
       <td>{{preventivo.ripetizione3}}</td>
-            <td>{{tot.2}}</td>
+            <td>{{tot.2}}€</td>
     </tr>
     {%endif%}
-      {%if preventivo.prestazione4 == "None"%}
-      {{elif}}
+
+    {%if tot.3 != 0%}
+
     <tr>
       <th scope="row">4</th>
       <td>{{preventivo.prestazione4}}</td>
       <td>{{preventivo.prestazione4.prezzo}}€</td>
       <td>{{preventivo.ripetizione4}}</td>
-            <td>{{tot.3}}</td>
+            <td>{{tot.3}}€</td>
     </tr>
       {%endif%}
-    {%if preventivo.prestazione5 == "None"%}
-    {{elif}}
+
+    {%if tot.4 != 0%}
     <tr>
       <th scope="row">5</th>
       <td>{{preventivo.prestazione5}}</td>
       <td>{{preventivo.prestazione5.prezzo}}€</td>
       <td>{{preventivo.ripetizione5}}</td>
-            <td>{{tot.4}}</td>
+            <td>{{tot.4}}€</td>
     </tr>
       {%endif%}
   </tbody>
