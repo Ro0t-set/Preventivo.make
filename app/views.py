@@ -54,7 +54,7 @@ def add_utente(request):
     return render(request, 'add_utente.html', {'form':form})
 
 def prestazione(request):
-    prestazioni= Prestazione.objects.order_by('-prestazioni')
+    prestazioni= Prestazione.objects.order_by('prestazioni')
 
     return render(request, 'prestazione.html', {'prestazioni':prestazioni})
 
@@ -103,7 +103,10 @@ def edit_prestazione(request, pk):
 
 
 def preventivo(request):
+
     preventivo= Preventivo.objects.order_by('-published_date')
+
+
 
     return render(request, 'preventivo.html', {'preventivo':preventivo})
 

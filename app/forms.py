@@ -49,4 +49,6 @@ class PreventivoForm(forms.ModelForm):
         }
 
 
+
+
         #ripetizione= forms.NumberInput()

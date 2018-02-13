@@ -2,20 +2,42 @@
 
 {% block content %}
 
+<script>
+function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
 
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
 <br>
 
 <a href="/add_utente" class="btn btn-success">Aggiungi Nuovo Cliente</a>
 
 <br>
 <br>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cerca per cognome.." class="form-control">
 <br>
-<table class="table">
+<table class="table" id="myTable">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Nome</th>
       <th scope="col">Cognome</th>
+      <th scope="col">Nome</th>
       <th scope="col">Mail</th>
       <th scope="col">Telefono</th>
     </tr>
@@ -25,11 +47,11 @@
           {%for utente in utenti%}
       <th scope="row">{{utente.id}}</th>
 
-        <td>{{utente.nome}}</td>
         <td>{{utente.cognome}}</td>
+        <td>{{utente.nome}}</td>
         <td>{{utente.mail}}</td>
         <td>{{utente.telefono}}</td>
-        <td><a href="/utente/{{utente.id}}/edit">Modifica</a></td>
+        <td><a href="/utente/{{utente.id}}/edit">Vedi tutto e Modifica</a></td>
 
 
     </tr>
