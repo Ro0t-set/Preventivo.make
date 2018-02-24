@@ -31,7 +31,8 @@ class ClienteForm(forms.ModelForm):
 class PreventivoForm(forms.ModelForm):
     class Meta:
         model = Preventivo
-        fields = ['cliente','prestazione1', 'ripetizione1', 'prestazione2', 'ripetizione2', 'prestazione3', 'ripetizione3', 'prestazione4', 'ripetizione4', 'prestazione5', 'ripetizione5']
+        fields = ['cliente','prestazione1', 'ripetizione1', 'prestazione2', 'ripetizione2', 'prestazione3', 'ripetizione3', 'prestazione4', 'ripetizione4', 'prestazione5', 'ripetizione5', 'prestazione6', 'ripetizione6', 'prestazione7', 'ripetizione7', 'prestazione8', 'ripetizione8', 'prestazione9', 'ripetizione9',
+         'prestazione10', 'ripetizione10', 'prestazione11', 'ripetizione11', 'prestazione12', 'ripetizione12', 'prestazione13', 'ripetizione13', 'prestazione14', 'ripetizione14', 'prestazione15', 'ripetizione15']
         widgets = {
             'cliente': forms.Select(attrs={'class': 'custom-select col-4'}),
             'prestazione1': forms.Select(attrs={'class': 'form-control col-4'}),
@@ -39,11 +40,32 @@ class PreventivoForm(forms.ModelForm):
             'prestazione3': forms.Select(attrs={'class': 'form-control col-4'}),
             'prestazione4': forms.Select(attrs={'class': 'form-control col-4'}),
             'prestazione5': forms.Select(attrs={'class': 'form-control col-4'}),
+            'prestazione6': forms.Select(attrs={'class': 'form-control col-4'}),
+            'prestazione7': forms.Select(attrs={'class': 'form-control col-4'}),
+            'prestazione8': forms.Select(attrs={'class': 'form-control col-4'}),
+            'prestazione9': forms.Select(attrs={'class': 'form-control col-4'}),
+            'prestazione10': forms.Select(attrs={'class': 'form-control col-4'}),
+            'prestazione11': forms.Select(attrs={'class': 'form-control col-4'}),
+            'prestazione12': forms.Select(attrs={'class': 'form-control col-4'}),
+            'prestazione13': forms.Select(attrs={'class': 'form-control col-4'}),
+            'prestazione14': forms.Select(attrs={'class': 'form-control col-4'}),
+            'prestazione15': forms.Select(attrs={'class': 'form-control col-4'}),
             'ripetizione1': forms.NumberInput(attrs={'class': 'form-control col-2'}),
             'ripetizione2': forms.NumberInput(attrs={'class': 'form-control col-2'}),
             'ripetizione3': forms.NumberInput(attrs={'class': 'form-control col-2'}),
             'ripetizione4': forms.NumberInput(attrs={'class': 'form-control col-2'}),
             'ripetizione5': forms.NumberInput(attrs={'class': 'form-control col-2'}),
+            'ripetizione6': forms.NumberInput(attrs={'class': 'form-control col-2'}),
+            'ripetizione7': forms.NumberInput(attrs={'class': 'form-control col-2'}),
+            'ripetizione8': forms.NumberInput(attrs={'class': 'form-control col-2'}),
+            'ripetizione9': forms.NumberInput(attrs={'class': 'form-control col-2'}),
+            'ripetizione10': forms.NumberInput(attrs={'class': 'form-control col-2'}),
+            'ripetizione11': forms.NumberInput(attrs={'class': 'form-control col-2'}),
+            'ripetizione12': forms.NumberInput(attrs={'class': 'form-control col-2'}),
+            'ripetizione13': forms.NumberInput(attrs={'class': 'form-control col-2'}),
+            'ripetizione14': forms.NumberInput(attrs={'class': 'form-control col-2'}),
+            'ripetizione15': forms.NumberInput(attrs={'class': 'form-control col-2'}),
+
 
 
         }

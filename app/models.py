@@ -44,6 +44,37 @@ class Preventivo(models.Model):
     prestazione5 = models.ForeignKey('Prestazione',on_delete=models.CASCADE, related_name="prestazione5", default=3, blank=True, null=True)
     ripetizione5 = models.IntegerField(default=1)
 
+    prestazione6 = models.ForeignKey('Prestazione',on_delete=models.CASCADE, related_name="prestazione6", default=3, blank=True, null=True)
+    ripetizione6 = models.IntegerField(default=1)
+
+    prestazione7 = models.ForeignKey('Prestazione',on_delete=models.CASCADE, related_name="prestazione7", default=3, blank=True, null=True)
+    ripetizione7 = models.IntegerField(default=1)
+
+    prestazione8 = models.ForeignKey('Prestazione',on_delete=models.CASCADE, related_name="prestazione8", default=3, blank=True, null=True)
+    ripetizione8 = models.IntegerField(default=1)
+
+    prestazione9 = models.ForeignKey('Prestazione',on_delete=models.CASCADE, related_name="prestazione9", default=3, blank=True, null=True)
+    ripetizione9 = models.IntegerField(default=1)
+
+    prestazione10 = models.ForeignKey('Prestazione',on_delete=models.CASCADE, related_name="prestazione10", default=3, blank=True, null=True)
+    ripetizione10 = models.IntegerField(default=1)
+
+    prestazione11 = models.ForeignKey('Prestazione',on_delete=models.CASCADE, related_name="prestazione11", default=3, blank=True, null=True)
+    ripetizione11 = models.IntegerField(default=1)
+
+    prestazione12 = models.ForeignKey('Prestazione',on_delete=models.CASCADE, related_name="prestazione12", default=3, blank=True, null=True)
+    ripetizione12 = models.IntegerField(default=1)
+
+    prestazione13 = models.ForeignKey('Prestazione',on_delete=models.CASCADE, related_name="prestazione13", default=3, blank=True, null=True)
+    ripetizione13 = models.IntegerField(default=1)
+
+    prestazione14 = models.ForeignKey('Prestazione',on_delete=models.CASCADE, related_name="prestazione14", default=3, blank=True, null=True)
+    ripetizione14 = models.IntegerField(default=1)
+
+    prestazione15 = models.ForeignKey('Prestazione',on_delete=models.CASCADE, related_name="prestazione15", default=3, blank=True, null=True)
+    ripetizione15 = models.IntegerField(default=1)
+
+
     prezzo = models.IntegerField(default=0)
 
     def __str__(self):

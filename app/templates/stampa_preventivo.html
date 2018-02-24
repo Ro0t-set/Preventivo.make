@@ -89,11 +89,21 @@
             <td>{{tot.4}}€</td>
     </tr>
       {%endif%}
+
+      {%if tot.5 != 0%}
+      <tr>
+        <th scope="row">6</th>
+        <td>{{preventivo.prestazione6}}</td>
+        <td>{{preventivo.prestazione6.prezzo}}€</td>
+        <td>{{preventivo.ripetizione6}}</td>
+              <td>{{tot.5}}€</td>
+      </tr>
+        {%endif%}
   </tbody>
 </table>
 <br>
 <br>
 <hr align=”left” size=”1″ width=”300″ color=”black” noshade>
-<p>Tot: {{preventivo.prezzo}}€</p>
+<p>Tot: {{totoale}}€</p>
 
 {% endblock content %}

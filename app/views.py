@@ -123,7 +123,6 @@ def add_preventivo(request):
                 if form.is_valid():
                     preventivo = form.save(commit=False)
                     preventivo.published_date = timezone.now()
-                    preventivo.prezzo= int((preventivo.ripetizione1 * preventivo.prestazione1.prezzo) + (preventivo.ripetizione2 * preventivo.prestazione2.prezzo) + (preventivo.ripetizione3 * preventivo.prestazione3.prezzo) + (preventivo.ripetizione4 * preventivo.prestazione4.prezzo) + (preventivo.ripetizione5 * preventivo.prestazione5.prezzo))
                     preventivo.save()
                     print(form.as_table())
                     return HttpResponseRedirect('/preventivo')
@@ -143,11 +142,24 @@ def stampa_preventivo(request, pk):
     tot3= int(preventivo.ripetizione3  * preventivo.prestazione3.prezzo)
     tot4= int(preventivo.ripetizione4  * preventivo.prestazione4.prezzo)
     tot5= int(preventivo.ripetizione5  * preventivo.prestazione5.prezzo)
+    tot6= int(preventivo.ripetizione6  * preventivo.prestazione6.prezzo)
+    tot7= int(preventivo.ripetizione7  * preventivo.prestazione7.prezzo)
+    tot8= int(preventivo.ripetizione8  * preventivo.prestazione8.prezzo)
+    tot9= int(preventivo.ripetizione9  * preventivo.prestazione9.prezzo)
+    tot10= int(preventivo.ripetizione10  * preventivo.prestazione10.prezzo)
+    tot11= int(preventivo.ripetizione11  * preventivo.prestazione11.prezzo)
+    tot12= int(preventivo.ripetizione12  * preventivo.prestazione12.prezzo)
+    tot13= int(preventivo.ripetizione13  * preventivo.prestazione13.prezzo)
+    tot14= int(preventivo.ripetizione14  * preventivo.prestazione14.prezzo)
+    tot15= int(preventivo.ripetizione15  * preventivo.prestazione15.prezzo)
 
-    tot=[tot1,tot2,tot3,tot4,tot5]
+
+    tot=[tot1,tot2,tot3,tot4,tot5,tot6,tot7,tot8,tot9,tot10,tot11,tot12,tot13,tot14,tot15]
+
+    totoale=tot1 + tot2 + tot3 + tot4 +tot5 + tot6 + tot7 + tot8 + tot9 + tot10 + tot11 + tot12 + tot13 + tot14 + tot15
 
 
-    return render(request, 'stampa_preventivo.html', { 'preventivo':preventivo, 'tot':tot})
+    return render(request, 'stampa_preventivo.html', { 'preventivo':preventivo, 'tot':tot, 'totoale':totoale})
 
 
 
