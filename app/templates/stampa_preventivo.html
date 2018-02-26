@@ -1,6 +1,4 @@
-{% extends 'base.html' %}
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 
 <div class="col-12">
@@ -8,102 +6,192 @@
   <br>
   <i>VIA R.TORELLI, 93 06134 PERUGIA <br>TEL 07541017</i>
 
-<br>
-<br>
-<br>
+  <br>
+  <br>
+  <br>
   <h4><b><i>Preventivo</i></b></h4>
   <br>
-  <p><b>Data Preventivo:</b>    {{preventivo.created_date}}</p>
+  <p><b>Data Preventivo:</b> {{preventivo.created_date}}</p>
   <br>
 
   <hr align=”left” size=”1″ width=”300″ color=”black” noshade>
-<h5><b>Info cliente</b></h5>
 
-<p><b>Paziente:</b> {{preventivo.cliente.nome}} {{preventivo.cliente.cognome}}<br>
-<b>Tel:</b> {{preventivo.cliente.telefono}}<br>
-<b>mail:</b> {{preventivo.cliente.mail}}<br>
-<b>Indirizzo:</b> {{preventivo.cliente.indirizzo}}<br>
-<b>Codice Fiscale:</b> {{preventivo.cliente.codice_fiscale}}</p>
-<div>
-  note:{{preventivo.cliente.note}}
-<br>
-<hr align=”left” size=”1″ width=”300″ color=”black” noshade>
-<br>
-  <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Dettaglio</th>
-      <th scope="col">Prezzo</th>
-      <th scope="col">Quantità</th>
-      <th scope="col">Totale</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>{{preventivo.prestazione1}}</td>
-      <td>{{preventivo.prestazione1.prezzo}}€</td>
-      <td>{{preventivo.ripetizione1}}</td>
-            <td>{{tot.0}}€</td>
-    </tr>
+  <p><b>Paziente:</b> {{preventivo.cliente.nome}} {{preventivo.cliente.cognome}}<br>
+    <b>Tel:</b> {{preventivo.cliente.telefono}}<br>
+    <b>mail:</b> {{preventivo.cliente.mail}}<br>
+    <b>Indirizzo:</b> {{preventivo.cliente.indirizzo}}<br>
+    <b>Codice Fiscale:</b> {{preventivo.cliente.codice_fiscale}}</p>
+  <div>
+    note:{{preventivo.cliente.note}}
+    <br>
+    <hr align=”left” size=”1″ width=”300″ color=”black” noshade>
+    <br>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Dettaglio</th>
+          <th scope="col">Prezzo</th>
+          <th scope="col">Quantità</th>
+          <th scope="col">Totale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>{{preventivo.prestazione1}}</td>
+          <td>{{preventivo.prestazione1.prezzo}}€</td>
+          <td>{{preventivo.ripetizione1}}</td>
+          <td>{{tot.0}}€</td>
+        </tr>
 
-    {%if tot.1 != 0%}
-    <tr>
-      <th scope="row">2</th>
-      <td>{{preventivo.prestazione2}}</td>
-      <td>{{preventivo.prestazione2.prezzo}}€</td>
-      <td>{{preventivo.ripetizione2}}</td>
-            <td>{{tot.1}}€</td>
-    </tr>
-    {%endif%}
+        {%if tot.1 != 0%}
+        <tr>
+          <th scope="row">2</th>
+          <td>{{preventivo.prestazione2}}</td>
+          <td>{{preventivo.prestazione2.prezzo}}€</td>
+          <td>{{preventivo.ripetizione2}}</td>
+          <td>{{tot.1}}€</td>
+        </tr>
+        {%endif%} {%if tot.2 != 0%}
 
-    {%if tot.2 != 0%}
+        <tr>
+          <th scope="row">3</th>
+          <td>{{preventivo.prestazione3}}</td>
+          <td>{{preventivo.prestazione3.prezzo}}€</td>
+          <td>{{preventivo.ripetizione3}}</td>
+          <td>{{tot.2}}€</td>
+        </tr>
+        {%endif%} {%if tot.3 != 0%}
 
-    <tr>
-      <th scope="row">3</th>
-      <td>{{preventivo.prestazione3}}</td>
-      <td>{{preventivo.prestazione3.prezzo}}€</td>
-      <td>{{preventivo.ripetizione3}}</td>
-            <td>{{tot.2}}€</td>
-    </tr>
-    {%endif%}
-
-    {%if tot.3 != 0%}
-
-    <tr>
-      <th scope="row">4</th>
-      <td>{{preventivo.prestazione4}}</td>
-      <td>{{preventivo.prestazione4.prezzo}}€</td>
-      <td>{{preventivo.ripetizione4}}</td>
-            <td>{{tot.3}}€</td>
-    </tr>
-      {%endif%}
-
-    {%if tot.4 != 0%}
-    <tr>
-      <th scope="row">5</th>
-      <td>{{preventivo.prestazione5}}</td>
-      <td>{{preventivo.prestazione5.prezzo}}€</td>
-      <td>{{preventivo.ripetizione5}}</td>
-            <td>{{tot.4}}€</td>
-    </tr>
-      {%endif%}
-
-      {%if tot.5 != 0%}
-      <tr>
-        <th scope="row">6</th>
-        <td>{{preventivo.prestazione6}}</td>
-        <td>{{preventivo.prestazione6.prezzo}}€</td>
-        <td>{{preventivo.ripetizione6}}</td>
-              <td>{{tot.5}}€</td>
-      </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td>{{preventivo.prestazione4}}</td>
+          <td>{{preventivo.prestazione4.prezzo}}€</td>
+          <td>{{preventivo.ripetizione4}}</td>
+          <td>{{tot.3}}€</td>
+        </tr>
+        {%endif%} {%if tot.4 != 0%}
+        <tr>
+          <th scope="row">5</th>
+          <td>{{preventivo.prestazione5}}</td>
+          <td>{{preventivo.prestazione5.prezzo}}€</td>
+          <td>{{preventivo.ripetizione5}}</td>
+          <td>{{tot.4}}€</td>
+        </tr>
+        {%endif%} {%if tot.5 != 0%}
+        <tr>
+          <th scope="row">6</th>
+          <td>{{preventivo.prestazione6}}</td>
+          <td>{{preventivo.prestazione6.prezzo}}€</td>
+          <td>{{preventivo.ripetizione6}}</td>
+          <td>{{tot.5}}€</td>
+        </tr>
+        {%endif%} {%if tot.6 != 0%}
+        <tr>
+          <th scope="row">6</th>
+          <td>{{preventivo.prestazione7}}</td>
+          <td>{{preventivo.prestazione7.prezzo}}€</td>
+          <td>{{preventivo.ripetizione7}}</td>
+          <td>{{tot.6}}€</td>
+        </tr>
+        {%endif%} {%if tot.7 != 0%}
+        <tr>
+          <th scope="row">7</th>
+          <td>{{preventivo.prestazione8}}</td>
+          <td>{{preventivo.prestazione8.prezzo}}€</td>
+          <td>{{preventivo.ripetizione8}}</td>
+          <td>{{tot.7}}€</td>
+        </tr>
+        {%endif%} {%if tot.8 != 0%}
+        <tr>
+          <th scope="row">8</th>
+          <td>{{preventivo.prestazione9}}</td>
+          <td>{{preventivo.prestazione9.prezzo}}€</td>
+          <td>{{preventivo.ripetizione9}}</td>
+          <td>{{tot.8}}€</td>
+        </tr>
+        {%endif%} {%if tot.9 != 0%}
+        <tr>
+          <th scope="row">10</th>
+          <td>{{preventivo.prestazione10}}</td>
+          <td>{{preventivo.prestazione10.prezzo}}€</td>
+          <td>{{preventivo.ripetizione10}}</td>
+          <td>{{tot.9}}€</td>
+        </tr>
+        {%endif%} {%if tot.10 != 0%}
+        <tr>
+          <th scope="row">11</th>
+          <td>{{preventivo.prestazione11}}</td>
+          <td>{{preventivo.prestazione11.prezzo}}€</td>
+          <td>{{preventivo.ripetizione11}}</td>
+          <td>{{tot.10}}€</td>
+        </tr>
+        {%endif%} {%if tot.11 != 0%}
+        <tr>
+          <th scope="row">12</th>
+          <td>{{preventivo.prestazione12}}</td>
+          <td>{{preventivo.prestazione12.prezzo}}€</td>
+          <td>{{preventivo.ripetizione12}}</td>
+          <td>{{tot.11}}€</td>
+        </tr>
+        {%endif%} {%if tot.12 != 0%}
+        <tr>
+          <th scope="row">13</th>
+          <td>{{preventivo.prestazione13}}</td>
+          <td>{{preventivo.prestazione13.prezzo}}€</td>
+          <td>{{preventivo.ripetizione13}}</td>
+          <td>{{tot.12}}€</td>
+        </tr>
+        {%endif%} {%if tot.13 != 0%}
+        <tr>
+          <th scope="row">14</th>
+          <td>{{preventivo.prestazione14}}</td>
+          <td>{{preventivo.prestazione14.prezzo}}€</td>
+          <td>{{preventivo.ripetizione14}}</td>
+          <td>{{tot.13}}€</td>
+        </tr>
+        {%endif%} {%if tot.14 != 0%}
+        <tr>
+          <th scope="row">15</th>
+          <td>{{preventivo.prestazione15}}</td>
+          <td>{{preventivo.prestazione15.prezzo}}€</td>
+          <td>{{preventivo.ripetizione15}}</td>
+          <td>{{tot.14}}€</td>
+        </tr>
         {%endif%}
-  </tbody>
-</table>
-<br>
-<br>
-<hr align=”left” size=”1″ width=”300″ color=”black” noshade>
-<p>Tot: {{totoale}}€</p>
+      </tbody>
+    </table>
+    <br>
+    <br>
+    <hr align=”left” size=”1″ width=”300″ color=”black” noshade>
 
-{% endblock content %}
+    <div class="container">
+      <div class="row">
+        <div class="col-8">
+          <p>Tot: {{totoale}}€ </p>  </div>
+        <div class="col-4"><i>Firma e Accettazione</i>  </div>
+
+
+    </div>
+
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col align-self-start">
+
+            </div>
+            <div class="col align-self-center">
+
+            </div>
+            <div class="col align-self-end">
+              ___________________________
+            </div>
+          </div>
+        </div>
+
+
+
+
+    {% endblock content %}
