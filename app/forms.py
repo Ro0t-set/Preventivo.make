@@ -29,10 +29,27 @@ class ClienteForm(forms.ModelForm):
 
 
 class PreventivoForm(forms.ModelForm):
+    prestazione1 = forms.ModelChoiceField(queryset=Prestazione.objects.order_by('prestazioni'))
+    prestazione2 = forms.ModelChoiceField(queryset=Prestazione.objects.order_by('prestazioni'))
+    prestazione3 = forms.ModelChoiceField(queryset=Prestazione.objects.order_by('prestazioni'))
+    prestazione4 = forms.ModelChoiceField(queryset=Prestazione.objects.order_by('prestazioni'))
+    prestazione5 = forms.ModelChoiceField(queryset=Prestazione.objects.order_by('prestazioni'))
+    prestazione6 = forms.ModelChoiceField(queryset=Prestazione.objects.order_by('prestazioni'))
+    prestazione7 = forms.ModelChoiceField(queryset=Prestazione.objects.order_by('prestazioni'))
+    prestazione8 = forms.ModelChoiceField(queryset=Prestazione.objects.order_by('prestazioni'))
+    prestazione9 = forms.ModelChoiceField(queryset=Prestazione.objects.order_by('prestazioni'))
+    prestazione10= forms.ModelChoiceField(queryset=Prestazione.objects.order_by('prestazioni'))
+    prestazione11= forms.ModelChoiceField(queryset=Prestazione.objects.order_by('prestazioni'))
+    prestazione12= forms.ModelChoiceField(queryset=Prestazione.objects.order_by('prestazioni'))
+    prestazione13= forms.ModelChoiceField(queryset=Prestazione.objects.order_by('prestazioni'))
+    prestazione14= forms.ModelChoiceField(queryset=Prestazione.objects.order_by('prestazioni'))
+    prestazione15= forms.ModelChoiceField(queryset=Prestazione.objects.order_by('prestazioni'))
+
     class Meta:
         model = Preventivo
         fields = ['cliente','prestazione1', 'ripetizione1', 'prestazione2', 'ripetizione2', 'prestazione3', 'ripetizione3', 'prestazione4', 'ripetizione4', 'prestazione5', 'ripetizione5', 'prestazione6', 'ripetizione6', 'prestazione7', 'ripetizione7', 'prestazione8', 'ripetizione8', 'prestazione9', 'ripetizione9',
          'prestazione10', 'ripetizione10', 'prestazione11', 'ripetizione11', 'prestazione12', 'ripetizione12', 'prestazione13', 'ripetizione13', 'prestazione14', 'ripetizione14', 'prestazione15', 'ripetizione15']
+
         widgets = {
             'cliente': forms.Select(attrs={'class': 'custom-select col-4'}),
             'prestazione1': forms.Select(attrs={'class': 'form-control col-4'}),

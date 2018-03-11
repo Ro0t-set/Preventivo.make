@@ -79,6 +79,7 @@ class Preventivo(models.Model):
 
     def __str__(self):
         return str(self.cliente)
+        
 
     created_date = models.DateTimeField(
         default=timezone.now)
